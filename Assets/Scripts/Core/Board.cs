@@ -27,6 +27,24 @@ public class Board : MonoBehaviour
         
     }
 
+    bool isWithinBoard(int x, int y)
+    {
+        return (x >= 0 && x < m_height && y >= 0);
+    }
+
+    public bool isValidPosition(Shape shape)
+    {
+        foreach (Transform child in shape.transform)
+        {
+            Vector2 pos = Vectorf.Round(child.position);
+            if(!isWithinBoard((int) pos.x, (int)pos.y))
+            {
+                return false;
+            }
+            
+        }
+        return true;
+    }
     void DrawEmptyCells()
     {
         if (m_emptySprite != null)

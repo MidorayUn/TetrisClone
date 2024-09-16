@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     public Shape SpawnShape()
     {
         Shape shape = null;
-        shape = Instantiate(GetRandomShape(),transform.position,Quaternion.identity) as Shape;
+        shape = Instantiate(GetRandomShape(),transform.position,Quaternion.identity);
         if (shape)
         {
             return shape;
