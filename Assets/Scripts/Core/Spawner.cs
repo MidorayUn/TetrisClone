@@ -19,7 +19,6 @@ public class Spawner : MonoBehaviour
 
             return null;
         }
-
     }
 
     public Shape SpawnShape()
